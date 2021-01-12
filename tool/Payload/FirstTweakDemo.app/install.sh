@@ -77,9 +77,6 @@ rm -rf $PAYLOAD_PATH
 # 重新创建Payload文件夹
 mkdir $PAYLOAD_PATH
 
-# 移除之前生成的FirstTweakDemo.ipa包
-rm "${TOOL_PATH}/${PRODUCT_NAME}.ipa"
-
 # 软链接build目录
 ln -fhs "${BUILT_PRODUCTS_DIR}" "${TOOL_PATH}/LatestBuild"
 
@@ -109,14 +106,18 @@ mkdir "${PAYLOAD_PATH}""${PRODUCT_NAME}.app/Frameworks/"
 cp $TWEAK_CUR_DYLIB_PATH "${PAYLOAD_PATH}/${PRODUCT_NAME}.app/Frameworks/${TWEAK_DYLIB_NAME}"
 cp "${TOOL_PATH}/${SUBSTRATE_LIB_NAME}" "${PAYLOAD_PATH}/${PRODUCT_NAME}.app/Frameworks/${SUBSTRATE_LIB_NAME}"
 
+
 # 调用生成en.plist文件的方法
 generate_plist
 
 # 从build目录中拷贝Entitlements.plist文件
-cp $XCODE_ENTITLEMENTS_PATH .
+#cp $XCODE_ENTITLEMENTS_PATH .
 
 # 对FirstTweakDemo.app签名
 codesign -fs $EXPANDED_CODE_SIGN_IDENTITY --no-strict --entitlements="${EN_PATH}" "${PAYLOAD_PATH}${PRODUCT_NAME}.app"
+
+# 移除之前生成的FirstTweakDemo.ipa包
+rm "${TOOL_PATH}/${PRODUCT_NAME}.ipa"
 
 # 重新生成FirstTweakDemo.ipa包
 zip -ry "${PRODUCT_NAME}.ipa" Payload

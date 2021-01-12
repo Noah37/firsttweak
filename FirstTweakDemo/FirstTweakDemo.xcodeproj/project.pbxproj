@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3DEC6E9025AD536000B2E8A4 /* install.sh in Resources */ = {isa = PBXBuildFile; fileRef = 3DEC6E8F25AD536000B2E8A4 /* install.sh */; };
 		B264E24525AC8657006AF8FC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B264E24425AC8657006AF8FC /* AppDelegate.m */; };
 		B264E24825AC8657006AF8FC /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B264E24725AC8657006AF8FC /* SceneDelegate.m */; };
 		B264E24B25AC8657006AF8FC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B264E24A25AC8657006AF8FC /* ViewController.m */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3DEC6E8F25AD536000B2E8A4 /* install.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = install.sh; path = ../tool/install.sh; sourceTree = "<group>"; };
 		B264E24025AC8657006AF8FC /* FirstTweakDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirstTweakDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B264E24325AC8657006AF8FC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B264E24425AC8657006AF8FC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -48,6 +50,7 @@
 		B264E23725AC8657006AF8FC = {
 			isa = PBXGroup;
 			children = (
+				3DEC6E8F25AD536000B2E8A4 /* install.sh */,
 				B264E24225AC8657006AF8FC /* FirstTweakDemo */,
 				B264E24125AC8657006AF8FC /* Products */,
 			);
@@ -141,6 +144,7 @@
 			files = (
 				B264E25325AC865A006AF8FC /* LaunchScreen.storyboard in Resources */,
 				B264E25025AC865A006AF8FC /* Assets.xcassets in Resources */,
+				3DEC6E9025AD536000B2E8A4 /* install.sh in Resources */,
 				B264E24E25AC8657006AF8FC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
