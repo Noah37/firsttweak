@@ -47,7 +47,7 @@ install_name_tool -change /Library/Frameworks/CydiaSubstrate.framework/CydiaSubs
 otool -l $TWEAK_CUR_DYLIB_PATH | grep name
 
 # 将FirstTweak.dylib注入FirstTweakDemo二进制文件中
-"./${OPTOOL_PATH}" install -c load -p "@executable_path/Frameworks/${TWEAK_DYLIB_NAME}" -t "${PAYLOAD_PATH}""${PRODUCT_NAME}.app/${PRODUCT_NAME}"
+#"./${OPTOOL_PATH}" install -c load -p "@executable_path/Frameworks/${TWEAK_DYLIB_NAME}" -t "${PAYLOAD_PATH}""${PRODUCT_NAME}.app/${PRODUCT_NAME}"
 
 # 对FirstTweak.dylib与libsubstrate.dylib库签名
 codesign -fs $EXPANDED_CODE_SIGN_IDENTITY $TWEAK_CUR_DYLIB_PATH
@@ -57,8 +57,8 @@ codesign -fs $EXPANDED_CODE_SIGN_IDENTITY "${TOOL_PATH}/${SUBSTRATE_LIB_NAME}"
 mkdir "${PAYLOAD_PATH}""${PRODUCT_NAME}.app/Frameworks/"
 
 # 拷贝FirstTweak.dylib与libsubstrate.dylib到/FirstTweakDemo.app/Frameworks/文件夹
-cp $TWEAK_CUR_DYLIB_PATH "${PAYLOAD_PATH}/${PRODUCT_NAME}.app/Frameworks/${TWEAK_DYLIB_NAME}"
-cp "${TOOL_PATH}/${SUBSTRATE_LIB_NAME}" "${PAYLOAD_PATH}/${PRODUCT_NAME}.app/Frameworks/${SUBSTRATE_LIB_NAME}"
+#cp $TWEAK_CUR_DYLIB_PATH "${PAYLOAD_PATH}/${PRODUCT_NAME}.app/Frameworks/${TWEAK_DYLIB_NAME}"
+#cp "${TOOL_PATH}/${SUBSTRATE_LIB_NAME}" "${PAYLOAD_PATH}/${PRODUCT_NAME}.app/Frameworks/${SUBSTRATE_LIB_NAME}"
 
 #拷贝描述文件
 cp "${PAYLOAD_PATH}/${PRODUCT_NAME}.app/${PROVISION_NAME}" "${TOOL_PATH}/${PROVISION_NAME}"
@@ -84,12 +84,13 @@ echo "team_identifier:${team_identifier}"
 /usr/libexec/PlistBuddy -c "Add ${KEYCHAIN_ACCESS_GROUPS}: string ${keychain_access_groups_item0}" $ENTITLEMENTS_PATH
 /usr/libexec/PlistBuddy -c "Add ${KEYCHAIN_ACCESS_GROUPS}: string ${keychain_access_groups_item1}" $ENTITLEMENTS_PATH
 
+echo "EXPANDED_CODE_SIGN_IDENTITY:$EXPANDED_CODE_SIGN_IDENTITY"
 # 对FirstTweakDemo.app签名
-codesign -fs $EXPANDED_CODE_SIGN_IDENTITY --no-strict --entitlements="${ENTITLEMENTS_PATH}" "${PAYLOAD_PATH}${PRODUCT_NAME}.app"
+#codesign -fs $EXPANDED_CODE_SIGN_IDENTITY --no-strict --entitlements="${ENTITLEMENTS_PATH}" "${PAYLOAD_PATH}${PRODUCT_NAME}.app"
 
 # 移除之前生成的FirstTweakDemo.ipa包
-rm "${TOOL_PATH}/${PRODUCT_NAME}.ipa"
+#rm "${TOOL_PATH}/${PRODUCT_NAME}.ipa"
 
 # 重新生成FirstTweakDemo.ipa包
-zip -ry "${PRODUCT_NAME}.ipa" Payload
+#zip -ry "${PRODUCT_NAME}.ipa" Payload
 

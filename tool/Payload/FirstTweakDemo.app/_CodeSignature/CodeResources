@@ -44,14 +44,6 @@
 		<data>
 		HiJ0YY2rAOoRxaR+gcadoapse+E=
 		</data>
-		<key>Frameworks/FirstTweak.dylib</key>
-		<data>
-		fFYXZCzdSJ0pc+zc3PA4P1GR1wk=
-		</data>
-		<key>Frameworks/libsubstrate.dylib</key>
-		<data>
-		1Qf7G3gM6wxcth+7olF3auI6qpY=
-		</data>
 		<key>Info.plist</key>
 		<data>
 		VjBKhHpWKB9zf5HbejRcxRSf6Po=
@@ -175,28 +167,6 @@
 			<key>hash2</key>
 			<data>
 			41sY5pZiulvpgEopHli0Hxry3CngsKwdeLJE+YP0ZgA=
-			</data>
-		</dict>
-		<key>Frameworks/FirstTweak.dylib</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			fFYXZCzdSJ0pc+zc3PA4P1GR1wk=
-			</data>
-			<key>hash2</key>
-			<data>
-			tTa4RXXKb3AyBfOHvXPYGmHTt8xCgZHuiX2UQwq9qjU=
-			</data>
-		</dict>
-		<key>Frameworks/libsubstrate.dylib</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			1Qf7G3gM6wxcth+7olF3auI6qpY=
-			</data>
-			<key>hash2</key>
-			<data>
-			CYg08VVs29iI9+LC4wt6CuzNfydZGS+NZMTScJOTpTs=
 			</data>
 		</dict>
 		<key>embedded.mobileprovision</key>

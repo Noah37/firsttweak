@@ -44,14 +44,6 @@
 		<data>
 		HiJ0YY2rAOoRxaR+gcadoapse+E=
 		</data>
-		<key>Frameworks/FirstTweak.dylib</key>
-		<data>
-		3BUQFytJmsDPU6SGrluCM3NaW4Q=
-		</data>
-		<key>Frameworks/libsubstrate.dylib</key>
-		<data>
-		mcxeL1SMu/qhNacO346zzsd5wqs=
-		</data>
 		<key>Info.plist</key>
 		<data>
 		VjBKhHpWKB9zf5HbejRcxRSf6Po=
@@ -62,7 +54,7 @@
 		</data>
 		<key>embedded.mobileprovision</key>
 		<data>
-		61clyYbkpu0jJ/LnnCtUwiS6t7k=
+		JVpZ/wOslDrdPXg3jeIrojW/j6Y=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -177,37 +169,15 @@
 			41sY5pZiulvpgEopHli0Hxry3CngsKwdeLJE+YP0ZgA=
 			</data>
 		</dict>
-		<key>Frameworks/FirstTweak.dylib</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			3BUQFytJmsDPU6SGrluCM3NaW4Q=
-			</data>
-			<key>hash2</key>
-			<data>
-			owsG48cOMFxmkzBJ3oZoQr7rxIACLhOvfnJQTKRJgFc=
-			</data>
-		</dict>
-		<key>Frameworks/libsubstrate.dylib</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			mcxeL1SMu/qhNacO346zzsd5wqs=
-			</data>
-			<key>hash2</key>
-			<data>
-			PqBG9fQTvXjJUKKmLZ0LK0FFzn4zi8OZd6fJdtsHw+o=
-			</data>
-		</dict>
 		<key>embedded.mobileprovision</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			61clyYbkpu0jJ/LnnCtUwiS6t7k=
+			JVpZ/wOslDrdPXg3jeIrojW/j6Y=
 			</data>
 			<key>hash2</key>
 			<data>
-			nPZEXn73aMgHnkOf5NrAIq6j9jWyWpZgb5rtll5ww9s=
+			kwbL52LVkx0yK0grM3jSrvzPJT0ufW2lfBfaYDRjoZU=
 			</data>
 		</dict>
 	</dict>
