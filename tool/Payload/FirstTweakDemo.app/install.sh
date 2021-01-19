@@ -77,9 +77,6 @@ rm -rf $PAYLOAD_PATH
 # 重新创建Payload文件夹
 mkdir $PAYLOAD_PATH
 
-# 移除之前生成的FirstTweakDemo.ipa包
-rm "${TOOL_PATH}/${PRODUCT_NAME}.ipa"
-
 # 软链接build目录
 ln -fhs "${BUILT_PRODUCTS_DIR}" "${TOOL_PATH}/LatestBuild"
 
@@ -96,7 +93,7 @@ install_name_tool -change /Library/Frameworks/CydiaSubstrate.framework/CydiaSubs
 otool -l $TWEAK_CUR_DYLIB_PATH | grep name
 
 # 将FirstTweak.dylib注入FirstTweakDemo二进制文件中
-#"./${OPTOOL_PATH}" install -c load -p "@executable_path/Frameworks/${TWEAK_DYLIB_NAME}" -t "${PAYLOAD_PATH}""${PRODUCT_NAME}.app/${PRODUCT_NAME}"
+"./${OPTOOL_PATH}" install -c load -p "@executable_path/Frameworks/${TWEAK_DYLIB_NAME}" -t "${PAYLOAD_PATH}""${PRODUCT_NAME}.app/${PRODUCT_NAME}"
 
 # 对FirstTweak.dylib与libsubstrate.dylib库签名
 codesign -fs $EXPANDED_CODE_SIGN_IDENTITY $TWEAK_CUR_DYLIB_PATH
@@ -106,29 +103,21 @@ codesign -fs $EXPANDED_CODE_SIGN_IDENTITY "${TOOL_PATH}/${SUBSTRATE_LIB_NAME}"
 mkdir "${PAYLOAD_PATH}""${PRODUCT_NAME}.app/Frameworks/"
 
 # 拷贝FirstTweak.dylib与libsubstrate.dylib到/FirstTweakDemo.app/Frameworks/文件夹
-#cp $TWEAK_CUR_DYLIB_PATH "${PAYLOAD_PATH}/${PRODUCT_NAME}.app/Frameworks/${TWEAK_DYLIB_NAME}"
-#cp "${TOOL_PATH}/${SUBSTRATE_LIB_NAME}" "${PAYLOAD_PATH}/${PRODUCT_NAME}.app/Frameworks/${SUBSTRATE_LIB_NAME}"
+cp $TWEAK_CUR_DYLIB_PATH "${PAYLOAD_PATH}/${PRODUCT_NAME}.app/Frameworks/${TWEAK_DYLIB_NAME}"
+cp "${TOOL_PATH}/${SUBSTRATE_LIB_NAME}" "${PAYLOAD_PATH}/${PRODUCT_NAME}.app/Frameworks/${SUBSTRATE_LIB_NAME}"
+
 
 # 调用生成en.plist文件的方法
 generate_plist
 
 # 从build目录中拷贝Entitlements.plist文件
-cp $XCODE_ENTITLEMENTS_PATH .
+#cp $XCODE_ENTITLEMENTS_PATH .
 
-echo "EXPANDED_CODE_SIGN_IDENTITY:$EXPANDED_CODE_SIGN_IDENTITY"
 # 对FirstTweakDemo.app签名
-<<<<<<< HEAD
-#codesign -fs $EXPANDED_CODE_SIGN_IDENTITY --no-strict --entitlements="${ENTITLEMENTS_PATH}" "${PAYLOAD_PATH}${PRODUCT_NAME}.app"
+codesign -fs $EXPANDED_CODE_SIGN_IDENTITY --no-strict --entitlements="${EN_PATH}" "${PAYLOAD_PATH}${PRODUCT_NAME}.app"
 
 # 移除之前生成的FirstTweakDemo.ipa包
-#rm "${TOOL_PATH}/${PRODUCT_NAME}.ipa"
-
-# 重新生成FirstTweakDemo.ipa包
-#zip -ry "${PRODUCT_NAME}.ipa" Payload
-
-=======
-codesign -fs $EXPANDED_CODE_SIGN_IDENTITY --no-strict --entitlements="${EN_PATH}" "${PAYLOAD_PATH}${PRODUCT_NAME}.app"
+rm "${TOOL_PATH}/${PRODUCT_NAME}.ipa"
 
 # 重新生成FirstTweakDemo.ipa包
 zip -ry "${PRODUCT_NAME}.ipa" Payload
->>>>>>> 0dbf09c79b2887dfc10349196f4daf5cc1d01acf
