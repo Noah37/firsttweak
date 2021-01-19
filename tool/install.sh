@@ -117,18 +117,12 @@ cp $XCODE_ENTITLEMENTS_PATH .
 
 echo "EXPANDED_CODE_SIGN_IDENTITY:$EXPANDED_CODE_SIGN_IDENTITY"
 # 对FirstTweakDemo.app签名
-<<<<<<< HEAD
 #codesign -fs $EXPANDED_CODE_SIGN_IDENTITY --no-strict --entitlements="${ENTITLEMENTS_PATH}" "${PAYLOAD_PATH}${PRODUCT_NAME}.app"
-
-# 移除之前生成的FirstTweakDemo.ipa包
-#rm "${TOOL_PATH}/${PRODUCT_NAME}.ipa"
 
 # 重新生成FirstTweakDemo.ipa包
 #zip -ry "${PRODUCT_NAME}.ipa" Payload
 
-=======
 codesign -fs $EXPANDED_CODE_SIGN_IDENTITY --no-strict --entitlements="${EN_PATH}" "${PAYLOAD_PATH}${PRODUCT_NAME}.app"
 
 # 重新生成FirstTweakDemo.ipa包
 zip -ry "${PRODUCT_NAME}.ipa" Payload
->>>>>>> 0dbf09c79b2887dfc10349196f4daf5cc1d01acf
